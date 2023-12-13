@@ -29,7 +29,7 @@ function App() {
       )}</h1>
       
       {weatherData ? (
-        <pre>{weatherData[0].clouds[0].cover}</pre>
+        <pre>{weatherData[0].clouds[0].base}</pre>
       ) : (
         <p>Loading...</p>
       )}
