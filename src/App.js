@@ -6,8 +6,9 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/'; // Using CORS Anywhere
         const apiUrl = 'https://aviationweather.gov/api/data/metar?ids=Kcdw&format=json';
-        const response = await fetch(apiUrl);
+        const response = await fetch(proxyUrl + apiUrl);
         const data = await response.json();
         setWeatherData(data);
         console.log(data)
@@ -22,11 +23,20 @@ function App() {
   return (
     <div className="App">
       <h1>{weatherData ? (
-        <pre>{weatherData[0].name}</pre>
+        <pre>{weatherData[0].icaoId}</pre>
       ) : (
         <p>Loading...</p>
       )}</h1>
       
+      <h2>{weatherData ? (
+        <pre>
+                   Sky - {weatherData[0].clouds[0].cover} 
+          <br></br>visibility -  {weatherData[0].visib}
+        </pre>
+      ) : (
+        <p>Loading...</p>
+      )}</h2>
+
       {weatherData ? (
         <pre>{weatherData[0].clouds[0].base}</pre>
       ) : (
