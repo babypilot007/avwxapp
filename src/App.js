@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import Footer from './footer';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -10,7 +11,7 @@ function App() {
     const fetchData = async () => {
       try {
         const proxyUrl = 'https://corsproxy.io/?'; // Using CORS Anywhere
-        const apiUrl = 'https://aviationweather.gov/api/data/metar?ids=KCDW%2CKTEB&format=json&taf=true';
+        const apiUrl = 'https://aviationweather.gov/api/data/metar?ids=Kcdw';
         const response = await fetch(proxyUrl + apiUrl);
         const data = await response.json();
         setWeatherData(data);
@@ -119,10 +120,13 @@ function App() {
       )}</h1>
 
 </div>
-
-    <p className='footer'>A boring Aviation weather App by Himalay Jariwala</p>
-
-</div>
+        
+        
+    
+        <Footer />
+    
+    </div>
+    
   );
 }
 
