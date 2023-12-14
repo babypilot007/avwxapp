@@ -16,9 +16,7 @@ function App() {
         setWeatherData(data);
         console.log(data)
 
-        if(data[0].visib === 'null'){
-          var conds = 'VFR'
-        }
+       
 
       } catch (error) {
         console.error(error);
