@@ -34,6 +34,14 @@
 
 }
 
+
+.noprecip{
+  color:rgb(33, 220, 16)
+}
+.precip{
+  color:rgb(222, 155, 79)
+}
+
 .footer {
     background-color: rgb(57, 45, 37);
     text-align: center;
