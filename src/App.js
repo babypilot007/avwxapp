@@ -97,7 +97,7 @@ function App() {
                           return (
                               <p className='LIFR'>Absolutely Won't Fly </p>
                           )
-                        }
+                        }else return ( <p className='clear'>Blue skies </p>)
                 })()  
             }  
         </div>  

@@ -28,7 +28,11 @@
 
     color :rgb(225, 31, 189)
 }
+.clear{
+  color :rgb(67, 146, 230)
 
+
+}
 
 .footer {
     background-color: rgb(57, 45, 37);
