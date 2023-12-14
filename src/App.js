@@ -11,7 +11,7 @@ function App() {
     const fetchData = async () => {
       try {
         const proxyUrl = 'https://corsproxy.io/?'; // Using CORS Anywhere
-        const apiUrl = 'https://aviationweather.gov/api/data/metar?ids=Kcdw';
+        const apiUrl = 'https://aviationweather.gov/api/data/metar?ids=KCDW%2CKTEB&format=json&taf=true';
         const response = await fetch(proxyUrl + apiUrl);
         const data = await response.json();
         setWeatherData(data);
