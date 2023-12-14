@@ -115,7 +115,7 @@ function App() {
         <p>Loading...</p>
       )}</h2>
 
-    <p className='footer'>A boring weather App by Himalay Jariwala</p>
+    <p className='footer'>A boring Aviation weather App by Himalay Jariwala</p>
     </div>
   );
 }
