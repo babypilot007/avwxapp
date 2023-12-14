@@ -37,7 +37,10 @@ function App() {
 
     <div className="App">
       
-      <h2>{weatherData ? (
+
+      <div className='METAR'>
+     
+       <h2>{weatherData ? (
         <pre>
             <p className ='clouds'>     
             {
@@ -98,25 +101,28 @@ function App() {
             }  
         </div>  
 
-
         </pre>
       ) : (
         <p>Loading...</p>
       )}</h2>
 
-      
-      <h2>{weatherData ? (
+</div>
+
+
+      {/* KTEB */}
+<div className='TAF'> 
+      <h1>{weatherData ? (
         <pre>{weatherData[1].icaoId}
-            <br></br>TAF - 
-
-        
         </pre>
       ) : (
         <p>Loading...</p>
-      )}</h2>
+      )}</h1>
+
+</div>
 
     <p className='footer'>A boring Aviation weather App by Himalay Jariwala</p>
-    </div>
+
+</div>
   );
 }
 

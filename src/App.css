@@ -1,16 +1,13 @@
 .App {
     background-color: #282c34;
-    min-height: 100vh;
+    height: 100vh;
     padding-left: 20px;
     padding-right: 20px;
-
-    display: flex;
-    flex-direction: column;
     color: white;
     border: solid rgb(234, 22, 22);
     text-wrap: wrap;
     font-size: small;
-    overflow-x: scroll;
+    overflow-x:hidden;
   }
 
   .winds{
@@ -32,6 +29,17 @@
     color :rgb(225, 31, 189)
 }
 
+.METAR{
+
+}
+.TAF{
+}
+
   .footer{
+    position: sticky;
+    margin-top: 90%;
+    padding: 5px;
+    background-color: rgb(42, 28, 28);
     text-align: center;
+    height: fit-content;
   }
