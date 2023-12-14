@@ -81,15 +81,15 @@ function App() {
                             return (
                                 <p className='VFR'>I'd Fly in this weather</p>
                             )
-                        } else if (parseInt(weatherData[0].visib) <= 5 && parseInt(weatherData[0].visib) >= 3 || parseInt(weatherData[0].clouds[0].base) <= 3000 && parseInt(weatherData[0].clouds[0].base) >= 1000) {
+                        } else if ((parseInt(weatherData[0].visib) <= 5 && parseInt(weatherData[0].visib) >= 3 ) || ( parseInt(weatherData[0].clouds[0].base) <= 3000 && parseInt(weatherData[0].clouds[0].base) >= 1000)) {
                             return (
                             <p className='MVFR'>I probably won't Fly</p>
                             )
-                        } else if(parseInt(weatherData[0].visib) < 3 && parseInt(weatherData[0].visib) >= 1 || parseInt(weatherData[0].clouds[0].base) < 1000 && parseInt(weatherData[0].clouds[0].base) >= 500) {
+                        } else if((parseInt(weatherData[0].visib) < 3 && parseInt(weatherData[0].visib) >= 1 ) || ( parseInt(weatherData[0].clouds[0].base) < 1000 && parseInt(weatherData[0].clouds[0].base) >= 500)) {
                             return (
                                 <p className='IFR'>Won't fly unless I need to </p>
                             )
-                        }else if(parseInt(weatherData[0].visib) < 1 || parseInt(weatherData[0].clouds[0].base) < 500) {
+                        }else if((parseInt(weatherData[0].visib) < 1) || (parseInt(weatherData[0].clouds[0].base) < 500)) {
                           return (
                               <p className='LIFR'>Absolutely Won't Fly </p>
                           )
