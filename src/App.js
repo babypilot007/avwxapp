@@ -5,31 +5,34 @@ import Footer from './footer';
 function App() {
   const [weatherData, setWeatherData] = useState(null);
 
-  useEffect(() => {
-
 
     const fetchData = async () => {
       try {
-        const proxyUrl = 'https://corsproxy.io/?'; // Using CORS Anywhere
-        const apiUrl = 'https://aviationweather.gov/api/data/metar?ids=KCDW%2CKTEB&format=json&taf=true';
-        const response = await fetch(proxyUrl + apiUrl);
-        const data = await response.json();
+        // const proxyUrl = 'https://corsproxy.org/?'; // Using CORS Anywhere
+        const apiUrl = 'https://corsproxy.org/?https%3A%2F%2Faviationweather.gov%2Fapi%2Fdata%2Fmetar%3Fids%3DKCDW%252CKTEB%26format%3Djson%26taf%3Dtrue';
+        const response = await fetch( apiUrl);
+        var data = await response.json();
         setWeatherData(data);
+        
         console.log(data)
+        console.log(data[1].rawTaf.split("FM"))
+        const from = data[1].rawTaf.split("FM")
 
-       
-
+        return from
       } catch (error) {
         console.error(error);
       }
+    }
 
-    
-    };
+      useEffect(() => {
+        fetchData()
+}, [])
 
-    
-
-    fetchData();
-  }, []);
+// useEffect(() => {
+//   setInterval(() => {
+//  fetchData()
+// }, 100000)
+// })
  
  
 
@@ -40,9 +43,12 @@ function App() {
       
 
       <div className='METAR'>
-     
+
+      
        <h2>{weatherData ? (
         <pre>
+
+          <h1>{weatherData[0].receiptTime}</h1>
             <p className ='clouds'>     
             {
                 (() => {
@@ -76,7 +82,9 @@ function App() {
           <br></br>Winds {weatherData[0].wdir}<span> </span>
                    at {weatherData[0].wspd} kts 
           <br></br>{weatherData[0].wgst}
-
+          
+          
+       
 
       <div className ='fltconds'>     
             {
@@ -126,7 +134,12 @@ function App() {
 
       {/* KTEB */}
       <div className='TAF'>
-     
+        
+        
+
+
+
+
      <h2>{weatherData ? (
       <pre>
           <p className ='clouds'>     
@@ -135,6 +148,14 @@ function App() {
                  if(weatherData[1].clouds[0].base === null)
                  {weatherData[1].clouds[0].base = "No Clouds"}
                  else {weatherData[1].clouds[0].base = weatherData[1].clouds[0].base +  ' AGL'}
+              })()             
+          }  
+          </p> 
+
+          <p className ='forcast'>     
+          {
+              (() => {
+                
               })()             
           }  
           </p> 
@@ -186,12 +207,29 @@ function App() {
                       }else return ( <p className='clear'>Blue skies </p>)
               })()  
           }  
+
+<div className ='precip'>     
+            {
+                (() => {
+                   if((parseInt(weatherData[1].temp) - parseInt(weatherData[1].dewp)) <= 4)
+                   {
+                    return <p className='precip'>Chances of Precip</p>
+                   }else 
+                   { return <p className='noprecip'>No Precip</p>}
+                })()  
+            }  
+        </div>  
       </div>  
 
       </pre>
     ) : (
       <p>Loading...</p>
     )}</h2>
+
+
+
+
+
 
     </div>
         
