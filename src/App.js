@@ -28,11 +28,12 @@ function App() {
         fetchData()
 }, [])
 
-// useEffect(() => {
-//   setInterval(() => {
-//  fetchData()
-// }, 100000)
-// })
+useEffect(() => {
+  setInterval(() => {
+ fetchData()
+}, 	
+300000)
+})
  
  
 
@@ -48,7 +49,7 @@ function App() {
        <h2>{weatherData ? (
         <pre>
 
-          <h1>{weatherData[0].receiptTime}</h1>
+          <h2>{weatherData[0].receiptTime}</h2>
             <p className ='clouds'>     
             {
                 (() => {
