@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Footer from './footer';
 import dayjs from 'dayjs';
+import newtime from './time';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -21,7 +22,6 @@ function App() {
         console.error(error);
       }
     }
-
 
 const time = () => {
     const date = dayjs();
@@ -45,6 +45,8 @@ const time = () => {
 
     return(
       <div>
+
+        
         <p>Refreshed at {ctime}</p>
             {
               (() => {
@@ -136,15 +138,15 @@ useEffect(() => {
                             return (
                                 <p className='VFR'>I'd Fly in this weather</p>
                             )
-                        } else if ((parseInt(weatherData[0].visib) <= 5 && parseInt(weatherData[0].visib) >= 3 ) || ( parseInt(weatherData[0].clouds[0].base) <= 3000 && parseInt(weatherData[0].clouds[0].base) >= 1000)) {
+                        } else if ((parseInt(weatherData[0].visib) <= 5 && parseInt(weatherData[0].visib) >= 3 ) && ( parseInt(weatherData[0].clouds[0].base) <= 3000 && parseInt(weatherData[0].clouds[0].base) >= 1000)) {
                             return (
-                            <p className='MVFR'>I probably won't Fly</p>
+                            <p className='MVFR'>I probably wouldn't Fly</p>
                             )
-                        } else if((parseInt(weatherData[0].visib) < 3 && parseInt(weatherData[0].visib) >= 1 ) || ( parseInt(weatherData[0].clouds[0].base) < 1000 && parseInt(weatherData[0].clouds[0].base) >= 500)) {
+                        } else if((parseInt(weatherData[0].visib) < 3 && parseInt(weatherData[0].visib) >= 1 ) || ( parseInt(weatherData[0].clouds[0].base) < 1000 && parseInt(weatherData[0].clouds[0].base) > 500)) {
                             return (
                                 <p className='IFR'>Won't fly unless I need to </p>
                             )
-                        }else if((parseInt(weatherData[0].visib) < 1) || (parseInt(weatherData[0].clouds[0].base) < 500)) {
+                        }else if((parseInt(weatherData[0].visib) < 1) || (parseInt(weatherData[0].clouds[0].base) <= 500)) {
                           return (
                               <p className='LIFR'>Absolutely Won't Fly </p>
                           )
@@ -230,41 +232,7 @@ useEffect(() => {
         <br></br>{weatherData[1].wgst}
 
 
-    <div className ='fltconds'>     
-          {
-              (() => {
-                  if(parseInt(weatherData[1].visib) >= 10 && parseInt(weatherData[1].clouds[0].base) > 3000 ) {
-                          return (
-                              <p className='VFR'>I'd Fly in this weather</p>
-                          )
-                      } else if ((parseInt(weatherData[1].visib) <= 5 && parseInt(weatherData[1].visib) >= 3 ) || ( parseInt(weatherData[1].clouds[0].base) <= 3000 && parseInt(weatherData[1].clouds[0].base) >= 1000)) {
-                          return (
-                          <p className='MVFR'>I probably won't Fly</p>
-                          )
-                      } else if((parseInt(weatherData[1].visib) < 3 && parseInt(weatherData[1].visib) >= 1 ) || ( parseInt(weatherData[1].clouds[0].base) < 1000 && parseInt(weatherData[1].clouds[0].base) >= 500)) {
-                          return (
-                              <p className='IFR'>Won't fly unless I need to </p>
-                          )
-                      }else if((parseInt(weatherData[1].visib) < 1) || (parseInt(weatherData[1].clouds[0].base) < 500)) {
-                        return (
-                            <p className='LIFR'>Absolutely Won't Fly </p>
-                        )
-                      }else return ( <p className='clear'>Blue skies </p>)
-              })()  
-          }  
-
-<div className ='precip'>     
-            {
-                (() => {
-                   if((parseInt(weatherData[1].temp) - parseInt(weatherData[1].dewp)) <= 4)
-                   {
-                    return <p className='precip'>Chances of Precip</p>
-                   }else 
-                   { return <p className='noprecip'>No Precip</p>}
-                })()  
-            }  
-        </div>  
-      </div>  
+      
 
       </pre>
     ) : (
