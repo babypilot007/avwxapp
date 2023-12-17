@@ -59,11 +59,6 @@ const time = () => {
     
   }
     
-    
-
- 
-
-
    
       useEffect(() => {
         fetchData()
@@ -72,8 +67,7 @@ const time = () => {
 useEffect(() => {
   setInterval(() => {
  fetchData()
-}, 	
-300000)
+}, 300000)
 })
 
 
@@ -129,8 +123,10 @@ useEffect(() => {
           <br></br>Winds {weatherData[0].wdir}<span> </span>
                    at {weatherData[0].wspd} kts 
           <br></br>{weatherData[0].wgst}
-          
-          
+
+        <div>
+          <p className='prectype'>{weatherData[0].wxString}</p>  
+        </div>     
        
 
       <div className ='fltconds'>     
@@ -156,6 +152,7 @@ useEffect(() => {
                 })()  
             }  
         </div> 
+
       <div className ='precip'>     
             {
                 (() => {
@@ -166,7 +163,8 @@ useEffect(() => {
                    { return <p className='noprecip'>No Precip</p>}
                 })()  
             }  
-        </div>  
+        </div>
+
 
         </pre>
       ) : (
