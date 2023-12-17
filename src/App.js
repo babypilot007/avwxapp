@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Footer from './footer';
 import dayjs from 'dayjs';
-import newtime from './time';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);

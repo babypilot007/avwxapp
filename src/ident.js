@@ -1,8 +1,6 @@
-import dayjs from "dayjs";
 import React from "react";
 
-
-function newtime(){
+function ident(){
 
     const date = dayjs();
     const ctime = date.format("hh:mm:ss") + " PM"
@@ -15,4 +13,4 @@ function newtime(){
     )
 }
 
-export default newtime
+export default ident
