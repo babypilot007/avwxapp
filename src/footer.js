@@ -1,7 +1,9 @@
 import React from "react";
+
+
 const Footer = () => (
     <footer className="footer">
-        <p>A boring Aviation Weather App created by Himalay Jariwala</p>
+        <p>A Stupid Aviation Weather App by Himalay Jariwala</p>
     </footer>
 );
  
