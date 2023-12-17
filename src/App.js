@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Footer from './footer';
 import dayjs from 'dayjs';
+import newtime from './time';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -25,7 +26,6 @@ function App() {
 const time = () => {
     const date = dayjs();
 
-    const ctime = date.format("hh:mm:ss") + " PM"
 
     const ctime2 = date.$H
 
@@ -33,20 +33,13 @@ const time = () => {
     const reptime = weatherData[1].reportTime.split(" ")
 
     const reptime2 = reptime[1].split(":")
-
-    console.log(reptime2[0])
-    
-
-
+  
     const fintime = reptime2[0] - 5
-
-    console.log(fintime)
 
     return(
       <div>
 
-        
-        <p>Refreshed at {ctime}</p>
+        {newtime()}
             {
               (() => {
                 if((ctime2 - fintime) < 1){
@@ -89,9 +82,9 @@ useEffect(() => {
           <h2>{weatherData[0].receiptTime}</h2>
 
 
-          <h3>{time()}</h3>
+          {time()}
 
-            <p className ='clouds'>     
+            <h3 className ='clouds'>     
             {
                 (() => {
                    if(weatherData[0].clouds[0].base === null)
@@ -99,7 +92,7 @@ useEffect(() => {
                    else {weatherData[0].clouds[0].base = weatherData[0].clouds[0].base +  ' AGL'}
                 })()             
             }  
-            </p> 
+            </h3> 
 
             <p className ='winds'>     
             {
