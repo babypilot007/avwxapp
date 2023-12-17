@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Footer from './footer';
+import dayjs from 'dayjs';
+import time from './time';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
-
 
     const fetchData = async () => {
       try {
@@ -15,15 +16,56 @@ function App() {
         setWeatherData(data);
         
         console.log(data)
-        console.log(data[1].rawTaf.split("FM"))
-        const from = data[1].rawTaf.split("FM")
+        // console.log(data[1].rawTaf.split("FM"))
 
-        return from
       } catch (error) {
         console.error(error);
       }
     }
 
+
+const time = () => {
+    const date = dayjs();
+
+    const ctime = date.format("hh:mm:ss") + " PM"
+
+    const ctime2 = date.$H
+
+
+    const reptime = weatherData[1].reportTime.split(" ")
+
+    const reptime2 = reptime[1].split(":")
+
+    console.log(reptime2[0])
+    
+
+
+    const fintime = reptime2[0] - 5
+
+    console.log(fintime)
+
+    return(
+      <div>
+        <p>Refreshed at {ctime}</p>
+            {
+              (() => {
+                if((ctime2 - fintime) < 1){
+                  return <h3 className='currenttime'>Data is Current</h3>
+                }
+                else { return <h3 className='oldTime'>Data is Old</h3>}
+             })()
+            }
+          </div>
+    )
+    
+  }
+    
+    
+
+ 
+
+
+   
       useEffect(() => {
         fetchData()
 }, [])
@@ -34,7 +76,8 @@ useEffect(() => {
 }, 	
 300000)
 })
- 
+
+
  
 
 
@@ -42,14 +85,18 @@ useEffect(() => {
 
     <div className="App">
       
+      <time />
 
       <div className='METAR'>
 
-      
+    
        <h2>{weatherData ? (
         <pre>
-
           <h2>{weatherData[0].receiptTime}</h2>
+
+
+          <h3>{time()}</h3>
+
             <p className ='clouds'>     
             {
                 (() => {

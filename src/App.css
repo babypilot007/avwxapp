@@ -28,11 +28,7 @@
 
     color :rgb(225, 31, 189)
 }
-.clear{
-  color :rgb(67, 146, 230)
 
-
-}
 
 
 .noprecip{
@@ -40,6 +36,15 @@
 }
 .precip{
   color:rgb(222, 155, 79)
+}
+
+
+.currenttime{
+  color: green;
+}
+
+.oldTime{
+  color: red;
 }
 
 .footer {
