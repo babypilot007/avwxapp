@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Footer from './footer';
-import dayjs from 'dayjs';
 import newtime from './time';
 import ident from './ident';
+import freezingLvl from './freezingLvl';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -24,29 +24,33 @@ function App() {
       }
     }
 
-const time = () => {
-    const date = dayjs();
-    const ctime2 = date.$H
-    const reptime = weatherData[1].reportTime.split(" ")
-    const reptime2 = reptime[1].split(":")
-    const fintime = reptime2[0] - 5
-    
-    return(
-      <div>
+// const time = () => {
+//     const date = dayjs();
+//     const ctime2 = date.$H - 12 
+//     const reptime = weatherData[0].reportTime.split(" ")
+//     const reptime2 = reptime[1].split(":")
+//     const fintime = reptime2[1] - 5
 
-        {newtime()}
-            {
-              (() => {
-                if((ctime2 - fintime) <= 1){
-                  return <h3 className='currenttime'>Data is Current</h3>
-                }
-                else { return <h3 className='oldTime'>Data is Old</h3>}
-             })()
-            }
-          </div>
-    )
+//     console.log(ctime2)
+//     console.log(fintime)
+
     
-  }
+//     return(
+//       <div>
+
+//         {newtime(weatherData[0].reportTime)}
+//             {
+//               (() => {
+//                 if((ctime2 - fintime) <= 1){
+//                   return <h3 className='currenttime'>Data is Current</h3>
+//                 }
+//                 else { return <h3 className='oldTime'>Data is Old</h3>}
+//              })()
+//             }
+//           </div>
+//     )
+    
+//   }
     
    
       useEffect(() => {
@@ -67,17 +71,17 @@ useEffect(() => {
 
     <div className="App">
       
-      <div></div>
 
       <div className='METAR'>
 
     
        <h2>{weatherData ? (
         <pre>
-          <h2>{weatherData[0].receiptTime}</h2>
 
 
-          {time()}
+          <h3>{newtime(weatherData[0].reportTime)}</h3>      
+
+          
 
             <p className ='clouds'>     
             {
@@ -112,6 +116,8 @@ useEffect(() => {
           <br></br>Winds {weatherData[0].wdir}<span> </span>
                    at {weatherData[0].wspd} kts 
           <br></br>{weatherData[0].wgst}
+        
+          {freezingLvl(weatherData[0].temp)}
 
         <div>
           <p className='prectype'>{ident(weatherData[0].wxString)}</p>  
@@ -153,6 +159,7 @@ useEffect(() => {
                 })()  
             }  
         </div>
+
 
 
         </pre>

@@ -2,20 +2,20 @@ import dayjs from "dayjs";
 import React from "react";
 
 
-function newtime(){
+function newtime(getTime){
 
     const date = dayjs();
     const ctime = date.$H
 
     return(
         <div>
-           
+            {getTime}
            {
               (() => {
                 if((24 - ctime) >= 12){
-                  return <h3>Refreshed at {date.format("hh:mm:ss")} AM </h3>
+                  return <p>Refreshed at {date.format("hh:mm:ss")} AM </p>
                 }
-                else { return <h3>Refreshed at {date.format("hh:mm:ss")} PM</h3>}
+                else { return <p>Refreshed at {date.format("hh:mm:ss")} PM</p>}
              })()
             }
     
