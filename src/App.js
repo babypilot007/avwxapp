@@ -3,6 +3,7 @@ import './App.css';
 import Footer from './footer';
 import dayjs from 'dayjs';
 import newtime from './time';
+import ident from './ident';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -36,13 +37,14 @@ const time = () => {
   
     const fintime = reptime2[0] - 5
 
+
     return(
       <div>
 
         {newtime()}
             {
               (() => {
-                if((ctime2 - fintime) < 1){
+                if((ctime2 - fintime) <= 1){
                   return <h3 className='currenttime'>Data is Current</h3>
                 }
                 else { return <h3 className='oldTime'>Data is Old</h3>}
@@ -72,7 +74,7 @@ useEffect(() => {
 
     <div className="App">
       
-      <time />
+      <div></div>
 
       <div className='METAR'>
 
@@ -84,7 +86,7 @@ useEffect(() => {
 
           {time()}
 
-            <h3 className ='clouds'>     
+            <p className ='clouds'>     
             {
                 (() => {
                    if(weatherData[0].clouds[0].base === null)
@@ -92,7 +94,7 @@ useEffect(() => {
                    else {weatherData[0].clouds[0].base = weatherData[0].clouds[0].base +  ' AGL'}
                 })()             
             }  
-            </h3> 
+            </p> 
 
             <p className ='winds'>     
             {
@@ -119,7 +121,7 @@ useEffect(() => {
           <br></br>{weatherData[0].wgst}
 
         <div>
-          <p className='prectype'>{weatherData[0].wxString}</p>  
+          <p className='prectype'>{ident(weatherData[0].wxString)}</p>  
         </div>     
        
 
