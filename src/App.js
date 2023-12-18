@@ -26,18 +26,11 @@ function App() {
 
 const time = () => {
     const date = dayjs();
-
-
     const ctime2 = date.$H
-
-
     const reptime = weatherData[1].reportTime.split(" ")
-
     const reptime2 = reptime[1].split(":")
-  
     const fintime = reptime2[0] - 5
-
-
+    
     return(
       <div>
 
@@ -136,7 +129,7 @@ useEffect(() => {
                             return (
                             <p className='MVFR'>I probably wouldn't Fly</p>
                             )
-                        } else if((parseInt(weatherData[0].visib) < 3 && parseInt(weatherData[0].visib) >= 1 ) || ( parseInt(weatherData[0].clouds[0].base) < 1000 && parseInt(weatherData[0].clouds[0].base) > 500)) {
+                        } else if((parseInt(weatherData[0].visib) < 3 && parseInt(weatherData[0].visib) >= 1 ) && ( parseInt(weatherData[0].clouds[0].base) < 1000 && parseInt(weatherData[0].clouds[0].base) > 500)) {
                             return (
                                 <p className='IFR'>Won't fly unless I need to </p>
                             )
