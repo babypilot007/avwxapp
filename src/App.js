@@ -4,6 +4,9 @@ import Footer from './footer';
 import newtime from './time';
 import ident from './ident';
 import freezingLvl from './freezingLvl';
+import visib from './visib';
+import coverType from './coverType';
+import clouds from './cloudsType';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -60,39 +63,30 @@ function App() {
 useEffect(() => {
   setInterval(() => {
  fetchData()
-}, 300000)
+}, 900000)
 })
-
-
- 
 
 
   return (
 
     <div className="App">
       
+      <h3>{newtime(weatherData[0].reportTime)}</h3>
 
-      <div className='METAR'>
-
-    
+      <div className='airPort_1'>
+        
        <h2>{weatherData ? (
         <pre>
 
 
-          <h3>{newtime(weatherData[0].reportTime)}</h3>      
+              {coverType(weatherData[0].clouds[0].cover)}
+              <p>Bases at {clouds(weatherData[0].clouds[0].base)}</p>
+             <p>visibility - {visib(weatherData[0].visib)}</p>
 
-          
 
-            <p className ='clouds'>     
-            {
-                (() => {
-                   if(weatherData[0].clouds[0].base === null)
-                   {weatherData[0].clouds[0].base = "No Clouds"}
-                   else {weatherData[0].clouds[0].base = weatherData[0].clouds[0].base +  ' AGL'}
-                })()             
-            }  
-            </p> 
 
+
+              
             <p className ='winds'>     
             {
                 (() => {
@@ -103,16 +97,7 @@ useEffect(() => {
             }  
             </p> 
 
-        <h2>{weatherData ? (
-        
-        <pre>{weatherData[0].icaoId}</pre>
-               ) : (
-             <p>Loading...</p>
-           )}</h2> 
 
-                   Sky - {weatherData[0].clouds[0].cover}    
-          <br></br>clouds - {weatherData[0].clouds[0].base}        
-          <br></br>visibility - {weatherData[0].visib} sm
           <br></br>Winds {weatherData[0].wdir}<span> </span>
                    at {weatherData[0].wspd} kts 
           <br></br>{weatherData[0].wgst}
@@ -166,7 +151,6 @@ useEffect(() => {
       ) : (
         <p>Loading...</p>
       )}</h2>
-
       </div>
 
 

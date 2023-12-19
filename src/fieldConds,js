@@ -1,0 +1,14 @@
+import visib from "./visib";
+
+const vconds = visib()
+
+ const fconds = function(){
+
+    return vconds
+
+ }
+
+    
+    
+
+export default fconds

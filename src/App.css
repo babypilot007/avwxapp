@@ -8,6 +8,15 @@
     text-wrap: wrap;
     font-size: small;
     overflow-x:hidden;
+    line-height: 15px;
+  }
+
+  .airPort_1{
+
+    border: solid 1px red;
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .winds{
@@ -22,7 +31,7 @@
     color: rgb(42, 197, 31);
   }
   .MVFR {
-    color: rgb(228, 226, 73);
+    color: rgb(73, 138, 228);
   }
   .LIFR {
 
