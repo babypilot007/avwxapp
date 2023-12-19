@@ -71,14 +71,12 @@ useEffect(() => {
 
     <div className="App">
       
-      <h3>{newtime(weatherData[0].reportTime)}</h3>
-
       <div className='airPort_1'>
-        
        <h2>{weatherData ? (
         <pre>
 
 
+          <h3>{newtime(weatherData[0].reportTime)}</h3>
               {coverType(weatherData[0].clouds[0].cover)}
               <p>Bases at {clouds(weatherData[0].clouds[0].base)}</p>
              <p>visibility - {visib(weatherData[0].visib)}</p>
