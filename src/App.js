@@ -7,6 +7,7 @@ import freezingLvl from './freezingLvl';
 import visib from './visib';
 import coverType from './coverType';
 import clouds from './cloudsType';
+import windConds from './windCond';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -88,25 +89,9 @@ useEffect(() => {
               {coverType(weatherData[0].clouds[0].cover)}
               <p>{clouds(weatherData[0].clouds[0].base)}</p>
              <p>visibility - {visib(weatherData[0].visib)}</p>
+              <p>{windConds(weatherData[0].wdir, weatherData[0].wspd, weatherData[0].wgst )}</p>
 
-
-
-
-              
-            <p className ='winds'>     
-            {
-                (() => {
-                   if(weatherData[0].wgst === null)
-                   {weatherData[0].wgst = ""}
-                   else {weatherData[0].wgst ='Gust ' + weatherData[0].wgst +  ' Kts'}
-                })()             
-            }  
-            </p> 
-
-
-          <br></br>Winds {weatherData[0].wdir}<span> </span>
-                   at {weatherData[0].wspd} kts 
-          <br></br>{weatherData[0].wgst}
+        
         
           {freezingLvl(weatherData[0].temp)}
 

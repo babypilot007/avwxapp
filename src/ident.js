@@ -25,7 +25,7 @@ function ident(code){
                 return "Heavy Rain"
 
             default :
-                return "Clear"
+                return ""
     }
 
 
