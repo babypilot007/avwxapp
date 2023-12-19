@@ -14,7 +14,7 @@ function coverType(cover){
         case "SCT" :
             return "Scattered"
         default :
-                return "Sky Clear"
+                return (<span className="MVFR">Sky Clear</span>)
     }
 }
 
