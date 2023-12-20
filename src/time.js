@@ -26,7 +26,7 @@ function newtime(getTime){
 
     return(
         <div>
-            {getTime}
+            {getTime}   {/* Have to edit this for EST */}
            {
               (() => {
                 if(date.format("HH") < 12){

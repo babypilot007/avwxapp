@@ -85,8 +85,8 @@ useEffect(() => {
        <h2>{weatherData ? (
         <pre>
 
-
-                 {coverType(weatherData[0].clouds[0].cover)}
+              <p className='airPort_header'>{weatherData[0].icaoId}</p>
+              <p>{coverType(weatherData[0].clouds[0].cover)}</p>
               <p>{clouds(weatherData[0].clouds[0].base)}</p>
               <p>visibility - {visib(weatherData[0].visib)}</p>
               <p>{windConds(weatherData[0].wdir, weatherData[0].wspd, weatherData[0].wgst )}</p>   
@@ -161,8 +161,9 @@ useEffect(() => {
           
           
 
-          
-          {coverType(weatherData[1].clouds[0].cover)}
+              
+              <p className='airPort_header'>{weatherData[1].icaoId}</p>
+                 {coverType(weatherData[1].clouds[0].cover)}
               <p>{clouds(weatherData[1].clouds[0].base)}</p>
              <p>visibility - {visib(weatherData[1].visib)}</p>
               <p>{windConds(weatherData[1].wdir, weatherData[1].wspd, weatherData[1].wgst )}</p>
