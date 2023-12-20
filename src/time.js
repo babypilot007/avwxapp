@@ -24,10 +24,6 @@ function newtime(getTime){
         }else isCurrent = <p className="IFR">{isCurrent = "Data is not Current"}</p>
 
 
-    console.log(reportTime)
-    console.log((date.format("hh")))
-    console.log(isCurrent)
-
     return(
         <div>
             {getTime}

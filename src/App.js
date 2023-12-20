@@ -86,17 +86,16 @@ useEffect(() => {
         <pre>
 
 
-              {coverType(weatherData[0].clouds[0].cover)}
+                 {coverType(weatherData[0].clouds[0].cover)}
               <p>{clouds(weatherData[0].clouds[0].base)}</p>
-             <p>visibility - {visib(weatherData[0].visib)}</p>
-              <p>{windConds(weatherData[0].wdir, weatherData[0].wspd, weatherData[0].wgst )}</p>
-
-        
-        
-          {freezingLvl(weatherData[0].temp)}
+              <p>visibility - {visib(weatherData[0].visib)}</p>
+              <p>{windConds(weatherData[0].wdir, weatherData[0].wspd, weatherData[0].wgst )}</p>   
+                 {freezingLvl(weatherData[0].temp)}
+          
+{/* Type of Preci*/}
 
         <div>
-          <p className='prectype'>{ident(weatherData[0].wxString)}</p>  
+               <p className='prectype'>{ident(weatherData[0].wxString)}</p>   
         </div>     
        
 
@@ -149,7 +148,8 @@ useEffect(() => {
 
 
       {/* KTEB */}
-      <div className='TAF'>
+
+      <div className='airPort_2'>
         
         
 
@@ -158,49 +158,26 @@ useEffect(() => {
 
      <h2>{weatherData ? (
       <pre>
-          <p className ='clouds'>     
-          {
-              (() => {
-                 if(weatherData[1].clouds[0].base === null)
-                 {weatherData[1].clouds[0].base = "No Clouds"}
-                 else {weatherData[1].clouds[0].base = weatherData[1].clouds[0].base +  ' AGL'}
-              })()             
-          }  
-          </p> 
+          
+          
 
-          <p className ='forcast'>     
-          {
-              (() => {
-                
-              })()             
-          }  
-          </p> 
+          
+          {coverType(weatherData[1].clouds[0].cover)}
+              <p>{clouds(weatherData[1].clouds[0].base)}</p>
+             <p>visibility - {visib(weatherData[1].visib)}</p>
+              <p>{windConds(weatherData[1].wdir, weatherData[1].wspd, weatherData[1].wgst )}</p>
 
-          <p className ='winds'>     
-          {
-              (() => {
-                 if(weatherData[1].wgst === null)
-                 {weatherData[1].wgst = ""}
-                 else {weatherData[1].wgst ='Gust ' + weatherData[1].wgst +  ' Kts'}
-              })()             
-          }  
-          </p> 
+        
+        
+          {freezingLvl(weatherData[0].temp)}
+          
+{/* Type of Preci*/}
 
-      <h2>{weatherData ? (
-      
-      <pre>{weatherData[1].icaoId}</pre>
-             ) : (
-           <p>Loading...</p>
-         )}</h2> 
+        <div>
+          <p className='prectype'>{ident(weatherData[0].wxString)}</p>   
+        </div> 
 
-                 Sky - {weatherData[1].clouds[0].cover}    
-        <br></br>clouds - {weatherData[1].clouds[0].base}        
-        <br></br>visibility - {weatherData[1].visib} sm
-        <br></br>Winds {weatherData[1].wdir}<span> </span>
-                 at {weatherData[1].wspd} kts 
-        <br></br>{weatherData[1].wgst}
-
-
+    
       
 
       </pre>
