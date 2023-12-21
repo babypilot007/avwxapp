@@ -6,19 +6,19 @@ function coverType(cover){
     switch(cover){
        
         case "FEW":
-            return (<span>Cloud Cover - <span className="MVFR">Few</span></span>)
+            return (<span>Cloud Cover - <span className="VFR">Few</span></span>)
 
         case "BKN" :
-            return (<span>Cloud Cover - <span className="MVFR">Broken</span></span>)
+            return (<span>Cloud Cover - <span className="VFR">Broken</span></span>)
 
         case "OVC" :
-            return (<span>Cloud Cover - <span className="MVFR">Overcast</span></span>)
+            return (<span>Cloud Cover - <span className="VFR">Overcast</span></span>)
 
         case "SCT" :
-            return (<span>Cloud Cover - <span className="MVFR">Scattered</span></span>)
+            return (<span>Cloud Cover - <span className="VFR">Scattered</span></span>)
 
         default :
-                return (<span className="MVFR">Sky Clear</span>)
+                return (<span className="VFR">Sky Clear</span>)
     }
 }
 

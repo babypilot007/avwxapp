@@ -2,7 +2,7 @@
 
 function freezingLvl(temp){
 
-    const freezingLvl = ((15 - (parseInt(temp))) / 2) * 1000;
+    const freezingLvl = (((parseInt(temp))) / 2) * 1000;
 
     return(
         <div className="freeze">

@@ -1,38 +1,31 @@
 
 
-
-function visib(vis){
+ function visib(vis){
 
 
 let intVis = parseInt(vis)
-var visConds = 1  //default is VFR
 
 if(intVis >= 10 )
 {   
+    return <span className="VFR">{intVis} sm</span>
     
-    visConds = 1
-    return (
-            visConds
-            )
-    
-}else if(intVis <3000 && intVis >1000 ){
-
+}else if(intVis <10 && intVis >5 ){
+   
     return <span className="MVFR">{intVis} sm</span>
 
-}else if(intVis <= 1000 && intVis > 500){
+}else if(intVis <= 5 && intVis > 3){
 
-      return <span className="IFR">{intVis} sm</span>
+    return <span className="IFR">{intVis} sm</span>
 
-}else if(intVis <= 500){
+}else if(intVis <= 3){
+    
+     return <span className="LIFR">{intVis} sm</span>     
+}
+   
 
-    return <span className="LIFR">{intVis} sm</span>     
 }
 
-    return visConds
-}
 export default visib
-
-
 
 
 

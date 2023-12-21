@@ -11,8 +11,9 @@ import windConds from './windCond';
 import rawTaf from './rawTaf';
 import fltDecision from './fltDecision';
 
+
 function App() {
-  const [weatherData, setWeatherData] = useState(null);
+  const [weatherData, setWeatherData] = useState();
 
     const fetchData = async () => {
       try {
@@ -21,8 +22,11 @@ function App() {
         const response = await fetch( apiUrl);
         var data = await response.json();
         setWeatherData(data);
+
+        
         
         console.log(data)
+
 
       } catch (error) {
         console.error(error);
@@ -30,11 +34,17 @@ function App() {
     }
 
 
-    
-   
+
       useEffect(() => {
         fetchData()
+        fltDecision()
+        visib()
+        clouds()
+        
 }, [])
+
+
+
 
 useEffect(() => {
   setInterval(() => {
@@ -42,9 +52,8 @@ useEffect(() => {
 }, 900000)
 })
 
-const uSee = visib(weatherData[0].visib)
-const iSe = fltDecision(uSee)
 
+  
 
   return (
 
@@ -63,7 +72,7 @@ const iSe = fltDecision(uSee)
        <h2>{weatherData ? (
         <pre>
 
-              <p className='airPort_header'>{weatherData[0].icaoId} <span>{iSe}</span></p>
+              <p className='airPort_header'>{weatherData[0].icaoId} <span>{fltDecision(visib(weatherData[0].visib).props.className, clouds(weatherData[0].clouds[0].base).props.children[1].props.className)}</span></p>
               <p>{coverType(weatherData[0].clouds[0].cover)}</p>
               <p>{clouds(weatherData[0].clouds[0].base)}</p>
               <p>visibility - {visib(weatherData[0].visib)}</p>
@@ -116,7 +125,7 @@ const iSe = fltDecision(uSee)
           
 
               
-              <p className='airPort_header'>{weatherData[1].icaoId}</p>
+              <p className='airPort_header'>{weatherData[1].icaoId}<span> {fltDecision(visib(weatherData[1].visib).props.className, clouds(weatherData[1].clouds[0].base).props.children[1].props.className)}</span></p>
                  {coverType(weatherData[1].clouds[0].cover)}
               <p>{clouds(weatherData[1].clouds[0].base)}</p>
              <p>visibility - {visib(weatherData[1].visib)}</p>

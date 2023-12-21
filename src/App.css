@@ -14,8 +14,7 @@
   .airPort_header{
       font-size: 22px;
       text-align: center;
-      text-decoration: underline;
-
+      
   }
 
   .airPort_1{
@@ -56,7 +55,7 @@
     color: rgb(42, 197, 31);
   }
   .MVFR {
-    color: rgb(73, 138, 228);
+    color: rgb(209, 177, 91);
   }
   .LIFR {
 
