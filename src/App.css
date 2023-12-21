@@ -28,9 +28,16 @@
   .airPort_2{
     margin-top: 10px;
     border: solid 1px red;
-    width: fit-content;
+    width: 100vw;
     padding-left: 10px;
     padding-right: 10px;
+    text-wrap: wrap;
+  }
+
+
+  .taf{
+      text-wrap: wrap;
+      text-overflow: hidden;
   }
 
   .gust{
