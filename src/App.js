@@ -18,7 +18,7 @@ function App() {
     const fetchData = async () => {
       try {
         // const proxyUrl = 'https://corsproxy.org/?'; // Using CORS Anywhere
-        const apiUrl = 'https://corsproxy.org/?https%3A%2F%2Faviationweather.gov%2Fapi%2Fdata%2Fmetar%3Fids%3DKCDW%252CKTEB%26format%3Djson%26taf%3Dtrue';
+        const apiUrl = 'https://corsproxy.org/?https%3A%2F%2Faviationweather.gov%2Fcgi-bin%2Fdata%2Fmetar.php%3Fids%3DKCDW%252CKTEB%252CKMMU%26format%3Djson%26taf%3Dtrue%26hours%3D4';
         const response = await fetch( apiUrl);
         var data = await response.json();
         setWeatherData(data);
@@ -32,7 +32,6 @@ function App() {
         console.error(error);
       }
     }
-
 
 
       useEffect(() => {
@@ -125,21 +124,27 @@ useEffect(() => {
           
 
               
-              <p className='airPort_header'>{weatherData[1].icaoId}<span> {fltDecision(visib(weatherData[1].visib).props.className, clouds(weatherData[1].clouds[0].base).props.children[1].props.className)}</span></p>
-                 {coverType(weatherData[1].clouds[0].cover)}
-              <p>{clouds(weatherData[1].clouds[0].base)}</p>
-             <p>visibility - {visib(weatherData[1].visib)}</p>
-              <p>{windConds(weatherData[1].wdir, weatherData[1].wspd, weatherData[1].wgst )}</p>
-                 {freezingLvl(weatherData[0].temp)}
+              <p className='airPort_header'>{weatherData[4].icaoId}<span> {fltDecision(visib(weatherData[4].visib).props.className, clouds(weatherData[1].clouds[0].base).props.children[1].props.className)}</span></p>
+                 {coverType(weatherData[4].clouds[0].cover)}
+              <p>{clouds(weatherData[4].clouds[0].base)}</p>
+             <p>visibility - {visib(weatherData[4].visib)}</p>
+              <p>{windConds(weatherData[4].wdir, weatherData[4].wspd, weatherData[4].wgst )}</p>
+                 {freezingLvl(weatherData[4].temp)}
           
 {/* Type of Preci*/}
 
         <div>
-          <p className='prectype'>{ident(weatherData[0].wxString)}</p>   
+          <p className='prectype'>{ident(weatherData[4].wxString)}</p>   
         </div> 
 
     
-        {rawTaf(weatherData[1].rawTaf)}
+        {rawTaf(weatherData[4].rawTaf)}
+
+
+
+
+
+        
 
       </pre>
     ) : (
@@ -151,7 +156,79 @@ useEffect(() => {
 
 
 
+
+
+
+
+    
+    
+    
+    
+    
     </div>
+
+
+
+
+
+
+       {/*KMMU*/} 
+       <div className='airPort_2'>
+        
+        
+
+
+
+
+        <h2>{weatherData ? (
+         <pre>
+             
+             
+   
+                 
+                 <p className='airPort_header'>{weatherData[8].icaoId}<span> </span></p>
+                    {coverType(weatherData[8].clouds[0].cover)}
+                 <p>{clouds(weatherData[8].clouds[0].base)}</p>
+                <p>visibility - {visib(weatherData[8].visib)}</p>
+                 <p>{windConds(weatherData[8].wdir, weatherData[8].wspd, weatherData[8].wgst )}</p>
+                    {freezingLvl(weatherData[8].temp)}
+             
+   {/* Type of Preci*/}
+   
+           <div>
+             <p className='prectype'>{ident(weatherData[8].wxString)}</p>   
+           </div> 
+   
+       
+   
+   
+   
+   
+   
+           
+   
+         </pre>
+       ) : (
+         <p>Loading...</p>
+       )}</h2>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+       
+       
+       
+       
+       
+       </div>
+
+
         <Footer />
     </div>
     
