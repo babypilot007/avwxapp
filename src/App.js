@@ -71,7 +71,6 @@ useEffect(() => {
        <h2>{weatherData ? (
         <pre>
 
-              <p className='airPort_header'>{weatherData[0].icaoId} <span>{fltDecision(visib(weatherData[0].visib).props.className, clouds(weatherData[0].clouds[0].base).props.children[1].props.className)}</span></p>
               <p>{coverType(weatherData[0].clouds[0].cover)}</p>
               <p>{clouds(weatherData[0].clouds[0].base)}</p>
               <p>visibility - {visib(weatherData[0].visib)}</p>
@@ -124,7 +123,6 @@ useEffect(() => {
           
 
               
-              <p className='airPort_header'>{weatherData[4].icaoId}<span> {fltDecision(visib(weatherData[4].visib).props.className, clouds(weatherData[1].clouds[0].base).props.children[1].props.className)}</span></p>
                  {coverType(weatherData[4].clouds[0].cover)}
               <p>{clouds(weatherData[4].clouds[0].base)}</p>
              <p>visibility - {visib(weatherData[4].visib)}</p>
@@ -186,7 +184,6 @@ useEffect(() => {
              
    
                  
-                 <p className='airPort_header'>{weatherData[8].icaoId}<span> </span></p>
                     {coverType(weatherData[8].clouds[0].cover)}
                  <p>{clouds(weatherData[8].clouds[0].base)}</p>
                 <p>visibility - {visib(weatherData[8].visib)}</p>
