@@ -8,7 +8,7 @@ function windConds(windir, windspd, wgust){
     return(
 
         <p>
-           Winds from <span className="VFR">{windir}°</span> at <span className="VFR">{windspd}</span> Kts
+           Winds <span className="VFR">Calm</span>
         </p>
 
     )}else  

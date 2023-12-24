@@ -9,7 +9,7 @@ function newtime(getTime){
     let reptime = getTime.split(" ")
     let reptime2 = reptime[1].split(":")
 
-    let reportTime = parseInt(reptime2[1])
+    let reportTime = parseInt(reptime2[0])
 
     if(reportTime <= 12){
 
@@ -18,8 +18,11 @@ function newtime(getTime){
         reportTime = ((reportTime) - 12) - 5
     }
 
+    console.log(reportTime)
+
     if(reportTime - parseInt(date.format("hh")) <= 0)
-        {
+        {   
+            
            isCurrent = <p className="VFR">{isCurrent = "Data is Current"}</p>
         }else isCurrent = <p className="IFR">{isCurrent = "Data is not Current"}</p>
 

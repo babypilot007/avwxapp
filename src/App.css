@@ -27,7 +27,7 @@
   .airPort_2{
     margin-top: 10px;
     border: solid 1px red;
-    width: 100vw;
+    width: fit-content;
     padding-left: 10px;
     padding-right: 10px;
     text-wrap: wrap;
