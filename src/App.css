@@ -4,11 +4,13 @@
     padding-left: 20px;
     padding-right: 20px;
     color: white;
-    border: solid rgb(234, 22, 22);
+    border: solid rgb(200, 200, 200);
     text-wrap: wrap;
     font-size: small;
     overflow-x:hidden;
     line-height: 15px;
+    display: block;
+    justify-content: center;
   }
 
   .airPort_header{
@@ -19,15 +21,15 @@
 
   .airPort_1{
 
-    border: solid 1px red;
+    border: solid 1px rgb(15, 15, 21);
     width: fit-content;
     padding-left: 10px;
     padding-right: 10px;
   }
   .airPort_2{
     margin-top: 10px;
-    border: solid 1px red;
-    width: fit-content;
+    border: solid 1px rgb(15, 15, 21);
+        width: fit-content;
     padding-left: 10px;
     padding-right: 10px;
     text-wrap: wrap;
