@@ -21,14 +21,14 @@
 
   .airPort_1{
 
-    border: solid 1px rgb(15, 15, 21);
+    border: solid 3px rgb(15, 15, 21);
     width: fit-content;
     padding-left: 10px;
     padding-right: 10px;
   }
   .airPort_2{
     margin-top: 10px;
-    border: solid 1px rgb(15, 15, 21);
+    border: solid 3px rgb(15, 15, 21);
         width: fit-content;
     padding-left: 10px;
     padding-right: 10px;
