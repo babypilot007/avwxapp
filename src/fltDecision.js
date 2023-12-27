@@ -8,7 +8,7 @@ function fltDecision(getSee, getCloud){
 
             return <span className="VFR">- VFR</span>
             
-        } else if((getSee === 'MVFR' || getCloud === 'MVFR') && (getSee !== 'IFR' || getCloud !== 'IFR') ){
+        } else if((getSee === 'MVFR' || getCloud === 'MVFR') && (getSee !== 'IFR','VFR','LIFR' || getCloud !== 'IFR','VFR','LIFR') ){
             return <span className="MVFR">- MVFR</span>
 
         }else if((getSee === 'IFR' || getCloud === 'IFR') && (getSee !== 'LIFR' || getCloud !== 'LIFR')){
