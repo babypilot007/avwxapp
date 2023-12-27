@@ -1,3 +1,4 @@
+import React from "react"
 
 
 function fltDecision(getSee, getCloud){
