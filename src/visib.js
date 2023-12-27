@@ -9,7 +9,7 @@ if(intVis <= 10 && intVis >= 5 )
 {   
     return <span className="VFR">{intVis} sm</span>
     
-}else if(intVis < 5 && intVis <=3 ){
+}else if(intVis < 5 && intVis >=3 ){
    
     return <span className="MVFR">{intVis} sm</span>
 

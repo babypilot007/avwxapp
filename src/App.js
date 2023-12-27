@@ -77,7 +77,6 @@ useEffect(() => {
        <h2>{weatherData ? (
         <pre>
       
-
               <p className='airPort_header'>{weatherData[0].icaoId} <span>{fltDecision(visib(weatherData[0].visib).props.className,clouds(weatherData[0].clouds[0].base).props.children[1].props.className )}</span></p>
               <p>{coverType(weatherData[0].clouds[0].cover)}</p>
               <p>{clouds(weatherData[0].clouds[0].base)}</p>
