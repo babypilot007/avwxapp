@@ -26,7 +26,10 @@ function ident(code){
                 return <p className='prectype'> rain</p>
             case "+RA":
                 return <p className='prectype'>Heavy rain</p>
-
+            case "FG":
+                    return <p className='prectype'>Fog</p>
+            case "HZ":
+                    return <p className='prectype'>Haze</p>
 
             default :
                 return <p className="no_precip"></p>

@@ -7,11 +7,11 @@ function freezingLvl(temp){
     const freezingLvl = (((parseInt(temp))) / 2) * 1000;
 
     return(
-        <div className="freeze">
+        <p className="freeze">
            
-          Freezing Level - {freezingLvl} Feet
+         <span className="title">Freezing level</span> - {freezingLvl} Feet
         
-        </div>
+        </p>
     )
 }
 

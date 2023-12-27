@@ -12,7 +12,9 @@
     display: block;
     justify-content: center;
   }
-
+.title{
+  color:white;
+}
   .airPort_header{
       font-size: 22px;
       text-align: center;
