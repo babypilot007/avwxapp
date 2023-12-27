@@ -53,6 +53,8 @@ useEffect(() => {
 })
 
 
+
+
   
 
   return (
@@ -60,7 +62,9 @@ useEffect(() => {
     <div className="App">
       <h2>{weatherData ? (
         <pre>
-                <h3>{newtime(weatherData[0].reportTime)}</h3>
+                <h3>{newtime(weatherData[0].reportTime)}</h3> 
+
+                
         </pre>
       ) : (
         <p>Loading...</p>
@@ -71,6 +75,7 @@ useEffect(() => {
       <div className='airPort_1'>
        <h2>{weatherData ? (
         <pre>
+      
 
               <p className='airPort_header'>{weatherData[0].icaoId} <span>{fltDecision(visib(weatherData[0].visib).props.className,clouds(weatherData[0].clouds[0].base).props.children[1].props.className )}</span></p>
               <p>{coverType(weatherData[0].clouds[0].cover)}</p>
@@ -81,7 +86,7 @@ useEffect(() => {
 {/* Type of Preci*/}
 
         <div>
-               <p className='prectype'>{ident(weatherData[0].wxString)}</p>   
+               <p>{ident(weatherData[0].wxString)}</p>   
         </div>     
        
 
@@ -112,8 +117,6 @@ useEffect(() => {
      <h2>{weatherData ? (
       <pre>
           
-          
-        
               <p className='airPort_header'>{weatherData[2].icaoId} <span>{fltDecision(visib(weatherData[2].visib).props.className,clouds(weatherData[2].clouds[0].base).props.children[1].props.className )}</span></p>
 
                  {coverType(weatherData[2].clouds[0].cover)}
@@ -125,7 +128,7 @@ useEffect(() => {
 {/* Type of Preci*/}
 
         <div>
-          <p className='prectype'>{ident(weatherData[2].wxString)}</p>   
+          <p>{ident(weatherData[2].wxString)}</p>   
         </div> 
 
     
@@ -186,7 +189,7 @@ useEffect(() => {
    {/* Type of Preci*/}
    
            <div>
-             <p className='prectype'>{ident(weatherData[1].wxString)}</p>   
+             <p>{ident(weatherData[1].wxString)}</p>   
            </div> 
    
        
