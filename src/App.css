@@ -1,17 +1,32 @@
 .App {
     background-color: #282c34;
-    height: 100vh;
+    height: 100%;
     padding-left: 20px;
     padding-right: 20px;
     color: white;
     border: solid rgb(200, 200, 200);
     text-wrap: wrap;
-    font-size: small;
+    font-size: medium;
     overflow-x:hidden;
     line-height: 15px;
     display: block;
     justify-content: center;
   }
+
+ .App_not{
+  text-align: center;
+  background-color: #282c34;
+  height: 100vh;
+  padding-top: 50%;
+  color: white;
+  border: solid rgb(200, 200, 200);
+  text-wrap: wrap;
+  font-size: xx-large;
+  overflow-x:hidden;
+  line-height: 15px;
+ }
+ 
+ 
 .title{
   color:white;
 }
@@ -23,10 +38,11 @@
 
   .airPort_1{
 
-    border: solid 3px rgb(15, 15, 21);
-    width: fit-content;
+    border: solid 1px rgb(15, 15, 21);
     padding-left: 10px;
     padding-right: 10px;
+    text-align: center;
+    margin: 5px;
   }
   .airPort_2{
     margin-top: 10px;
@@ -67,14 +83,11 @@
 }
 
 .prectype{
-  color :rgb(0, 0, 0);
+  color :rgb(245, 245, 245);
   background-color: rgb(51, 46, 39);
-  width: max-content;
-  height: fit-content;
-  padding-left: 5px;
-  padding-right: 5px;
+  position: relative;
   padding: 5px;
-  animation: blink 1s   infinite linear ;
+  animation: blink 2s   infinite linear ;
 }
 
 @keyframes blink {
@@ -112,10 +125,12 @@
 .footer {
     background-color: rgb(57, 45, 37);
     text-align: center;
-    position: fixed;
+    position: sticky;
     padding: 1px;
-    width: 100vw;
+    width: 100%;
     left: 0;
     color: white;
     font-size: 15px;
+    bottom: 0;
+    overflow: hidden;
 }

@@ -29,7 +29,7 @@ function newtime(getTime){
 
     return(
         <div>
-            {getTime}   {/* Have to edit this for EST */}
+            {getTime} zulu   {/* Have to edit this for EST */}
            {
               (() => {
                 if(date.format("HH") < 12){
