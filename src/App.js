@@ -87,12 +87,10 @@ if(weatherData !== null){
                         <p className='airPort_header'>{station.icaoId} <span>{fltDecision(visib(station.visib).props.className,clouds(station.clouds[0].base).props.children[1].props.className )}</span></p>
                           <p>{coverType(station.clouds[0].cover)}</p>
                           <p>{clouds(station.clouds[0].base)}</p>
-                          <p>visibility - {visib(station.visib)}</p>
+                          <p>{visib(station.visib)}</p>
                           <p>{windConds(station.wdir, station.wspd, station.wgst )}</p>   
-                             {freezingLvl(station.temp)}
-                             <div>
-                              <p>{ident(station.wxString)}</p>   
-                            </div>    
+                          <p>{freezingLvl(station.temp)}</p>
+                          <p>{ident(station.wxString)}</p>   
 
                   </div>
                   )

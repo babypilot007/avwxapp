@@ -7,19 +7,19 @@ let intVis = parseInt(vis)
 
 if(intVis <= 10 && intVis >= 5 )
 {   
-    return <span className="VFR">{intVis} sm</span>
+    return <p>Visibility - <span className="VFR">{intVis} sm</span></p>
     
 }else if(intVis < 5 && intVis >=3 ){
    
-    return <span className="MVFR">{intVis} sm</span>
+    return <p>Visibility - <span className="MVFR">{intVis} sm</span></p>
 
 }else if(intVis < 3 && intVis >= 1){
 
-    return <span className="IFR">{intVis} sm</span>
+    return <p>Visibility - <span className="IFR">{intVis} sm</span></p>
 
 }else if(intVis < 1){
     
-     return <span className="LIFR">{intVis} sm</span>     
+    return <p>Visibility - <span className="LIFR">{intVis} sm</span></p>     
 }
    
 
