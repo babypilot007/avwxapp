@@ -60,7 +60,8 @@ useEffect(() => {
 
 
 
-if(weatherData !== null){
+
+ 
 
   return (
           
@@ -71,7 +72,8 @@ if(weatherData !== null){
                 
                 <pre>              
                       <p>{newtime(weatherData[0].reportTime)}</p> 
-    
+                      <button>Forcast</button>
+                      
                 </pre>
                 ) : (
                 <p>Loading...</p>
@@ -90,43 +92,22 @@ if(weatherData !== null){
                           <p>{visib(station.visib)}</p>
                           <p>{windConds(station.wdir, station.wspd, station.wgst )}</p>   
                           <p>{freezingLvl(station.temp)}</p>
-                          <p>{ident(station.wxString)}</p>   
+                          <p>{ident(station.wxString)}</p>
+                          
 
                   </div>
                   )
                   })
-                  
-                  }
-                  
-              
-              
-  
-  
-  
-             
-  
-  
-  
-  
-  
-             
-  
-  
-  
-  
-  
-                 
-             
+                  }  
   
                   
               </div>
-              <Footer>
+                <Footer>
                 </Footer>
               
               </div>
   );
   
-  }else return <div className='App_not'>Site Unavailable</div>
   }
 
 
