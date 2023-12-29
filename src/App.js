@@ -72,7 +72,6 @@ useEffect(() => {
                 
                 <pre>              
                       <p>{newtime(weatherData[0].reportTime)}</p> 
-                      <button>Forcast</button>
                       
                 </pre>
                 ) : (
