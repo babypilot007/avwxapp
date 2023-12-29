@@ -14,7 +14,7 @@ function fltDecision(getSee, getCloud){
 
         }else if(getSee === 'MVFR' || getCloud === 'MVFR'){
 
-            return <span className="IFR">- IFR</span>
+            return <span className="MVFR">- MVFR</span>
 
         }else return <span className="VFR">- VFR</span>
 
