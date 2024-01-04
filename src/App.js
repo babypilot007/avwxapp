@@ -8,7 +8,7 @@ import visib from './visib';
 import coverType from './coverType';
 import clouds from './cloudsType';
 import windConds from './windCond';
-// import rawTaf from './rawTaf';
+import rawTaf from './rawTaf';
 import fltDecision from './fltDecision';
 // import dayjs from 'dayjs';
 
@@ -72,13 +72,13 @@ useEffect(() => {
                 
                 <pre>              
                       <p>{newtime(weatherData[0].reportTime)}</p> 
-                      
+                     
                 </pre>
                 ) : (
                 <p>Loading...</p>
                 )}</h2>
 
-                  
+                              
                 {weatherData && weatherData.map((station)=>{
 
                   return (
@@ -92,8 +92,9 @@ useEffect(() => {
                           <p>{windConds(station.wdir, station.wspd, station.wgst )}</p>   
                           <p>{freezingLvl(station.temp)}</p>
                           <p>{ident(station.wxString)}</p>
-                          
+                          <p className='taf'>{rawTaf(station.rawTaf)}</p>
 
+                         
                   </div>
                   )
                   })

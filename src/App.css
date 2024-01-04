@@ -25,6 +25,8 @@
   font-size: xx-large;
   overflow-x:hidden;
   line-height: 15px;
+  scroll-behavior: smooth;
+
  }
  
  
@@ -44,6 +46,8 @@
     padding-right: 10px;
     text-align: center;
     margin: 5px;
+    scroll-behavior: smooth;
+
   }
   .airPort_2{
     margin-top: 10px;
@@ -121,6 +125,14 @@
 
 .oldTime{
   color: red;
+}
+
+.taf{
+  
+  color : rgb(217, 232, 171);
+  text-wrap: none;
+  text-overflow: none;
+
 }
 
 .footer {
