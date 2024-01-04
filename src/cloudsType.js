@@ -6,7 +6,7 @@ function clouds(skyCover){
 
     if(skyCover === null)
     {
-        return <span> <span className="VFR"> No Clouds</span></span>
+        return <span> <span className="VFR"> </span></span>
             
     }
 
