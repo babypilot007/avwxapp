@@ -17,6 +17,9 @@ import fltDecision from './fltDecision';
 function App() {
 
   const [weatherData, setWeatherData] = useState('');
+  const [showTaf, setShowTaf] = useState(false)
+  const [showMetar, setShowMetar] = useState(true)
+
 
     const fetchData = async () => {
       try {
@@ -72,27 +75,42 @@ useEffect(() => {
                 
                 <pre>              
                       <p>{newtime(weatherData[0].reportTime)}</p> 
-                     
+                      
                 </pre>
                 ) : (
                 <p>Loading...</p>
                 )}</h2>
 
+                <div className='btn_div'>
+                <button className='btn' onClick={()=> 
+                {setShowTaf(!showTaf);
+                setShowMetar(!showMetar)}
+                }>
+                        {showTaf ? "Metar" : "Forcast"}
+                      </button>
+                </div>
                               
                 {weatherData && weatherData.map((station)=>{
 
                   return (
-
+                      
                     <div className='airPort_1'>
-                        
-                        <p className='airPort_header'>{station.icaoId} <span>{fltDecision(visib(station.visib).props.className,clouds(station.clouds[0].base).props.children[1].props.className )}</span></p>
-                          <p>{coverType(station.clouds[0].cover)}</p>
-                          <p>{clouds(station.clouds[0].base)}</p>
-                          <p>{visib(station.visib)}</p>
-                          <p>{windConds(station.wdir, station.wspd, station.wgst )}</p>   
-                          <p>{freezingLvl(station.temp)}</p>
-                          <p>{ident(station.wxString)}</p>
-                          <p className='taf'>{rawTaf(station.rawTaf)}</p>
+
+                        {showMetar ? <p>
+                                  
+                                   <p className='airPort_header'>{station.icaoId} <span>{fltDecision(visib(station.visib).props.className,clouds(station.clouds[0].base).props.children[1].props.className )}</span></p>
+                                    <p>{coverType(station.clouds[0].cover)}</p>
+                                    <p>{clouds(station.clouds[0].base)}</p> 
+                                    <p>{visib(station.visib)}</p>
+                                    <p>{windConds(station.wdir, station.wspd, station.wgst )}</p>   
+                                    <p>{freezingLvl(station.temp)}</p>
+                                    <p>{ident(station.wxString)}</p>
+
+                        </p>
+                        :null}
+
+                          {showTaf ? <p> {rawTaf(station.rawTaf)} </p>: null}
+
 
                          
                   </div>
