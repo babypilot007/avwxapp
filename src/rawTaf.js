@@ -12,7 +12,7 @@ function rawTaf(getTaf){
 
 
 
-                return split
+                return <ul> <li>{split}</li></ul>
 
         
         })
