@@ -30,7 +30,7 @@ function clouds(skyCover){
 
         return (<span>Bases at <span className="LIFR"> {skcover} Ft AGL</span></span>)
          
-    }   else return ""
+    }   
 
 }
 }

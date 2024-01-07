@@ -6,23 +6,13 @@ function rawTaf(getTaf){
 
         if(getTaf){
             
-           let split_Taf = getTaf.split("FM").map((split)=>{
+            console.log(getTaf)
+
+            let taf_data = getTaf.map((forcast)=>{
+
+                    return <div>Taf</div>
+            })
             
-                split.split(" ")
-
-
-
-                return <ul> <li>{split}</li></ul>
-
-        
-        })
-            
-            
-           console.log(split_Taf)
-
-           
-
-           return <div className="taf">{split_Taf}</div>
 
         }
 
