@@ -1,4 +1,5 @@
 
+import React from "react";
 
 function rawTaf(getTaf){
 
@@ -24,17 +25,21 @@ function rawTaf(getTaf){
 
 
            
-            const apnd = document.getElementsByClassName('taf')
+         
 
-            var new_div = document.createElement("div");
-
-            new_div.innerHTML = '<h1>TAF</h1>';
             
-           
+    
+
+
+
+              return(
+
+                <div dangerouslySetInnerHTML={{__html : getTaf}}>
+
+
+                </div>
+              )
             
-            console.log(apnd)
-
-
 
 
             

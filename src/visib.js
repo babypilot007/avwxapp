@@ -22,7 +22,7 @@ if(intVis <= 10 && intVis >= 5 )
     return <p>Visibility - <span className="LIFR">{intVis} sm</span></p>     
 }
    
-
+    console.log()
 }
 
 export default visib
