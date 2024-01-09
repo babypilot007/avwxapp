@@ -16,36 +16,48 @@ function ident(code){
 
 
                 if(break_ident[i] === 'RA')
-                {
-                    final_descp = "Moderate Rain" + " & " + final_descp
+                {   
+                    final_descp =  final_descp + " Moderate Rain" 
                 }else
                 if(break_ident[i] === '+RA')
-                {
-                    final_descp = final_descp + " "+"Heavy Rain"
+                {   
+                    final_descp =  final_descp + " Heavy Rain" 
+
+
                 }else
                 if(break_ident[i] === '-RA')
                 {
-                    final_descp = final_descp + " "+"Light Rain"
+                     final_descp =  final_descp + " Light Rain" 
+
+
                 }else
                 if(break_ident[i] === 'SN')
                 {
-                    final_descp = final_descp + " "+"moderate Snow"
+                    final_descp = final_descp + " moderate Snow "
                 }else
                 if(break_ident[i] === '-SN')
                 {
-                    final_descp = final_descp + " "+"Light Snow"
+                    final_descp = final_descp + " Light Snow "
                 }else
                 if(break_ident[i] === '+SN')
                 {
-                    final_descp = final_descp + " "+"Heavy Snow"
+                    final_descp = final_descp + " Heavy Snow "
                 }else
                 if(break_ident[i] === 'HZ')
                 {
-                    final_descp = final_descp + " "+"Haze"
+                    final_descp = final_descp + " Haze"
+                }else
+                if(break_ident[i] === 'TSRA')
+                {
+                    final_descp = final_descp +" Thunderstorms with Rain"
+                }else
+                if(break_ident[i] === '+TSRA')
+                {
+                    final_descp = final_descp +" Thunderstorms with Heavy Rain"
                 }else
                 if(break_ident[i] === 'BR')
                 {
-                    final_descp = final_descp + " "+"Mist"
+                    final_descp = final_descp +" Mist"
                 }
                 else final_descp = null
                
