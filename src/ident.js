@@ -13,22 +13,35 @@ function ident(code){
 
         for(var i=0 ; i < break_ident.length ; i++)
         {
+               var space = ""
+               
+               for (var j = 0; j < break_ident.length ; j++ ){
+                    
+                    if(j > 0 && j < break_ident.length){
+                         
+                         space =  ","
+                         console.log(space)
+                         j++
 
-               let space = ","
+                    }else space = ''
+
+                    console.log(space)
+
+               }
 
                 if(break_ident[i] === 'RA')
                 {   
-                    final_descp =   final_descp + " Moderate Rain" + space
+                    final_descp =  " Moderate Rain" + space
                 }else
                 if(break_ident[i] === '+RA')
                 {   
-                    final_descp =  final_descp + " Heavy Rain" + space
+                    final_descp =   " Heavy Rain" + space
 
 
                 }else
                 if(break_ident[i] === '-RA')
                 {
-                     final_descp =  final_descp + " Light Rain" + space
+                     final_descp =  " Light Rain" + space
 
 
                 }else
