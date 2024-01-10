@@ -181,9 +181,30 @@
 
 .taf{
   
-  color : rgb(217, 232, 171);
+  color : rgb(220, 223, 211);
   text-wrap: none;
   text-overflow: none;
+  line-height: 20px;
+
+}
+
+.left{
+  color: #e4bbbb;
+}
+
+.leftLabel{
+
+  background-color: #1d1818;
+
+
+}
+ td{
+  background-color: #1d1818;
+  padding: 5px;
+
+}
+.leftData{
+  background-color: #1d1818;
 
 }
 
