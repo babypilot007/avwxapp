@@ -5,9 +5,9 @@ import React from "react";
 function ident(code){
 
 
+     if(code){
     let break_ident = code.split(" ")
-
-        console.log(break_ident)
+     
 
         var final_descp = ""
 
@@ -20,12 +20,10 @@ function ident(code){
                     if(j > 0 && j < break_ident.length){
                          
                          space =  ","
-                         console.log(space)
                          j++
 
                     }else space = ''
 
-                    console.log(space)
 
                }
 
@@ -36,7 +34,6 @@ function ident(code){
                 if(break_ident[i] === '+RA')
                 {   
                     final_descp =   " Heavy Rain" + space
-
 
                 }else
                 if(break_ident[i] === '-RA')
@@ -76,11 +73,8 @@ function ident(code){
                 else final_descp = null
                
                
-                console.log(final_descp)
-
-
         }
-
+     }
         if(final_descp){
         return <p className="prectype">{final_descp}</p>
         }

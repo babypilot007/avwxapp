@@ -79,8 +79,6 @@ useEffect(() => {
 }, 900000)
 })
 
-console.log(weatherData)
-console.log(windsData)
 
 
  
@@ -127,15 +125,11 @@ console.log(windsData)
                                     <p>{freezingLvl(station.temp)}</p>
                                     <p>{ident(station.wxString)}</p>
 
+
                         </p>
                         :null}
 
-                            {/* {showTaf ? <p>{}</p>:null } */}
-                          
 
-
-
-                         
                   </div>
                   )
                   })
