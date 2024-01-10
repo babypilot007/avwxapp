@@ -190,6 +190,8 @@
 
 .left{
   color: #e4bbbb;
+  text-align: right;
+
 }
 
 .leftLabel{
@@ -198,14 +200,28 @@
 
 
 }
+
+
+tr{
+  color: rgb(255, 255, 255);
+  text-align: right;
+
+}
+.leftWxData td{
+  color: red;
+
+}
  td{
   background-color: #1d1818;
   padding: 5px;
+  text-align: left;
+
 
 }
-.leftData{
-  background-color: #1d1818;
 
+table{
+
+  background-color: rgb(8, 8, 8);
 }
 
 .footer {
