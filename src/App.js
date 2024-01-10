@@ -79,7 +79,7 @@ useEffect(() => {
 }, 900000)
 })
 
-
+console.log(weatherData)
 console.log(windsData)
 
 
