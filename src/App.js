@@ -46,7 +46,6 @@ function App() {
         setTafData(taf_data)
         setwindsData(winds_data)
 
-        
 
 
 
@@ -79,8 +78,7 @@ useEffect(() => {
 }, 900000)
 })
 
-
-
+console.log(windsData)
  
 
   return (
