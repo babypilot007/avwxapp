@@ -181,8 +181,6 @@
 .taf{
   
   color : rgb(220, 223, 211);
-  text-wrap: none;
-  text-overflow: none;
   line-height: 20px;
 
 }
@@ -193,12 +191,14 @@
 
 }
 
+
 .leftLabel{
 
   background-color: #1d1818;
 
-
 }
+
+
 
 
 tr{
@@ -221,6 +221,17 @@ tr{
 table{
 
   background-color: rgb(8, 8, 8);
+}
+
+
+
+.input_Taf{
+
+  height: 20px;
+  font-size: larger;
+  font-weight: bolder;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
 .footer {

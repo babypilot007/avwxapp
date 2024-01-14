@@ -8,10 +8,7 @@ function rawTaf(getTaf){
             
 
            
-         
-            console.log(getTaf)
             
-    
 
 
 
