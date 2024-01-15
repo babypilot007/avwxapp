@@ -22,6 +22,8 @@ function App() {
   const [showTaf, setShowTaf] = useState(false)
   const [showMetar, setShowMetar] = useState(true)
   const [showWinds, setShowWinds] = useState(false)
+  const [showTerms, setShowTerms] = useState(false)
+
 
 
 
@@ -88,23 +90,60 @@ useEffect(() => {
                 <p>Loading...</p>
                 )}</h2>
 
-                <div className='btn_div'>
-                <button className='btn' onClick={()=> 
-                {setShowTaf(!showTaf);
-                setShowMetar(!showMetar);
-              setShowWinds(!showWinds)}
-                }>
-                        {showTaf ? "Metar" : "Forcast"}
-                      </button>
+                <div>
+                
                 </div>
+
+                <div>
+                      <div className='btn_div'>
+                      
+                          <button className='btn' onClick={()=> 
+                            {  setShowTaf(!showTaf);
+                                setShowMetar(!showMetar);
+                                setShowWinds(!showWinds)
+                                setShowTerms(false)
+                            }
+                      }>
+
+                        
+                              {showTaf ? "Metar" : "Forcast"}
+                            </button>
+
+                          
+                      </div>
+                      
+                      
+                      <button className='terms_btn' onClick={()=> 
+                            {  
+                              setShowTerms(!showTerms)
+                            }
+                      }>
+
+                  
+                        {showTerms ? "close" : "Read Terms of Use"}
+
+                      </button>
+
+                      <div>
+                        {showTerms ? <div className='terms'> 
+                          <h1 >Caution</h1>
+
+                          <h2>This App is only meant for referencing purposes. The information presented 
+                            is prone to occasional Errors.
+                            Please, Do not use this App for actual Flight planning purposes
+                            or make decisions based on the information provided.</h2>
+                        
+                        </div> : null}
+                      
+                      </div>
                               
                 {weatherData && weatherData.map((station)=>{
 
                   return (
                       
-                    <div className='airPort_1'>
+                    <div >
 
-                        {showMetar ? <p>
+                        {showMetar ? <p className='airPort_1'>
                                   
                                    <p className='airPort_header'>{station.icaoId} <span>{fltDecision(visib(station.visib).props.children[1].props.className,clouds(station.clouds[0].base).props.children[1].props.className )}</span></p>
 
@@ -117,13 +156,16 @@ useEffect(() => {
 
 
                         </p>
-                        :null}
+                        : null}
 
 
                   </div>
+                  
                   )
                   })
                   }  
+
+                </div>
 
                     
                 {
@@ -132,9 +174,6 @@ useEffect(() => {
                       <div><div className='taf'>{Taf_screen()}</div>
                       
                        <div>{showTaf ? <div className='taf'>{}</div> : null}</div>
-                  
-                        
-                        
                       
                       </div>
 

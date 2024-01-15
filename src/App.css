@@ -62,7 +62,26 @@
 
  }
 
+ .terms_btn {
+  margin: 0;
+  left:80%;
+   align-items: center;
+   appearance: none;
+   background-color: #f3b364;
+   border-radius: 4px;
+   box-sizing: border-box;
+   color: #000000;
+   cursor: pointer;
+   height: 35px;
+   padding-left: 5px;
+   padding-right: 5px;
+   user-select: none;
+   touch-action: manipulation;
+   will-change: box-shadow,transform;
+   font-size: 22px;
 
+
+ }
  
  .btn:focus {
    box-shadow: #1b355a 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
@@ -87,6 +106,9 @@
   .airPort_header{
       font-size: 22px;
       text-align: center;
+      padding: 10px;
+      background-color: rgb(52, 43, 43);
+      inset: 5px;
       
   }
 
@@ -98,6 +120,7 @@
     text-align: center;
     margin: 5px;
     scroll-behavior: smooth;
+    font-size: larger;
 
   }
   .airPort_2{
@@ -113,6 +136,8 @@
   .taf{
       text-wrap: wrap;
       text-overflow: hidden;
+      text-align: center;
+      align-content: center;
   }
 
   .gust{
@@ -232,6 +257,28 @@ table{
   font-weight: bolder;
   margin-bottom: 15px;
   font-weight: bold;
+  
+}
+.input_Taf input{
+
+ background-color: red;
+}
+
+
+.terms{
+  color : rgb(220, 223, 211);
+  line-height: 25px;
+  font-style: normal;
+  font-size: small;
+  border: solid 1px black;
+  background-color: #2c2626;
+  padding: 10px;
+  margin: 10px;
+}
+
+.terms h1{
+  color : red;
+  text-align: center;
 }
 
 .footer {
@@ -246,3 +293,4 @@ table{
     bottom: 0;
     overflow: hidden;
 }
+
