@@ -19,7 +19,8 @@ import Taf_api from "./Taf_api";
 
         return(
             <div>
-                <p className="input_Taf">ICAO ID - </p>
+                <p className="input_Taf">ICAO ID -  </p>
+                <p>( Multiple Id's seperated by a space or a , )</p>
 
               <input className="input_Taf" type="text" onChange={(e) => setInputValue(e.target.value)}/>
 
