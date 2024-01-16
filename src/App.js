@@ -133,7 +133,7 @@ useEffect(() => {
 
                           <h2>This App is only meant for referencing purposes. The information presented 
                             is prone to occasional Errors.
-                            Please, Do not use this App for actual Flight planning purposes
+                            Please, Do not use this App for actual Flight planning
                             or make decisions based on the information provided.</h2>
                         
                         </div> : null}
