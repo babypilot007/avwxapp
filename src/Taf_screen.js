@@ -18,12 +18,14 @@ import Taf_api from "./Taf_api";
 
 
         return(
-            <div>
-                <div  className="input_Taf"><p>( Multiple ID's seperated by a space or a , )</p></div>
+            <div className="taf">
+                
+                <div  className="input_Taf"><p>( Multiple ID's seperated by a space or a , )</p><p>Default is KTEB </p></div>
 
               <input className="input" placeholder = "ICAO ID" type="text" onChange={(e) => setInputValue(e.target.value)}/>
 
-                     <div className="taf" dangerouslySetInnerHTML={{__html : Taf_api(inputValue)}}></div>
+            
+             <div  className="html" dangerouslySetInnerHTML={{__html :Taf_api(inputValue)}}></div>
 
 
             </div>

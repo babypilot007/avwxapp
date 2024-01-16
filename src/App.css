@@ -138,10 +138,18 @@
 
 
   .taf{
+    position: relative;
       text-wrap: wrap;
-      text-overflow: hidden;
       text-align: center;
-      align-content: center;
+      display: block;
+      justify-content: center;
+  }
+
+  .html{
+    position: relative;
+    display:block;
+    justify-content: center;
+    justify-items: center;
   }
 
   .gust{
@@ -207,12 +215,7 @@
   color: red;
 }
 
-.taf{
-  
-  color : rgb(220, 223, 211);
-  line-height: 20px;
 
-}
 
 .left{
   color: #e4bbbb;
@@ -257,7 +260,7 @@ table{
 .input_Taf{
   margin-top: 20px;
   font-weight: bolder;
-  font-size: clamp(.5rem, 1vw + 0.75rem, 1.5rem);
+  font-size: clamp(.1rem, .5vw + 0.75rem, 1rem);
   text-wrap: none;  
 }
 
