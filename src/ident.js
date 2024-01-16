@@ -93,7 +93,22 @@ function ident(code){
                 if(break_ident[i] === '+DZ')
                 {
                     final_descp = final_descp +" Heavy Drizzle" + space
+                }else
+                if(break_ident[i] === 'PL')
+                {
+                    final_descp = final_descp + " moderate Ice Pelletes " + space
+                }else
+                if(break_ident[i] === '-PL')
+                {
+                    final_descp = final_descp + " Light Ice Pelletes " + space
+                }else
+                if(break_ident[i] === '+PL')
+                {
+                    final_descp = final_descp + " Heavy Ice Pelletes " + space
                 }
+
+
+
                 else final_descp = null
                
                
