@@ -254,14 +254,14 @@ table{
   margin-top: 20px;
   font-weight: bolder;
   font-size: clamp(.5rem, 1vw + 0.75rem, 1.5rem);
-text-wrap: none;  
+  text-wrap: none;  
 }
 
 .input{
   margin: 10px;
   font-weight: bolder;
   height: 20px;
-  
+  font-size: larger;
 
 }
 
