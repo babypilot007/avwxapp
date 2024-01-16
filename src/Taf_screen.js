@@ -13,7 +13,6 @@ import Taf_api from "./Taf_api";
 
     const [inputValue, setInputValue] = useState('kteb');
 
-    console.log(inputValue)
    
         if(inputValue !== null){
 
@@ -26,7 +25,6 @@ import Taf_api from "./Taf_api";
 
                      <div className="taf" dangerouslySetInnerHTML={{__html : Taf_api(inputValue)}}></div>
 
-                     {console.log(inputValue)}
 
             </div>
     

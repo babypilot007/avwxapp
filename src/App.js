@@ -26,7 +26,6 @@ function App() {
 
     var display_taf = Taf_screen()
 
-      console.log(display_taf)
 
           if(!display_taf){
                 display_taf = "Enter Correctly"
@@ -100,10 +99,9 @@ useEffect(() => {
                 
                 </div>
 
-                <div>
                       <div className='btn_div'>
                       
-                          <button className='btn' onClick={()=> 
+                            <button className='btn' onClick={()=> 
                             {  setShowTaf(!showTaf);
                                 setShowMetar(!showMetar);
                                 setShowWinds(!showWinds)
@@ -115,11 +113,8 @@ useEffect(() => {
                               {showTaf ? "Metar" : "Forcast"}
                             </button>
 
-                          
-                      </div>
-                      
-                      
-                      <button className='terms_btn' onClick={()=> 
+
+                            <button className='terms_btn' onClick={()=> 
                             {  
                               setShowTerms(!showTerms)
                             }
@@ -128,8 +123,10 @@ useEffect(() => {
                   
                         {showTerms ? "close" : "Read Terms of Use"}
 
-                      </button>
-
+                            </button>
+                      </div>
+                      
+                <div>
                       <div>
                         {showTerms ? <div className='terms'> 
                           <h1 >Caution</h1>
@@ -141,7 +138,7 @@ useEffect(() => {
                         
                         </div> : null}
                       
-                      </div>
+                     </div>
                               
                 {weatherData && weatherData.map((station)=>{
 
@@ -171,7 +168,7 @@ useEffect(() => {
                   })
                   }  
 
-                </div>
+                      </div>
 
                     
                 {

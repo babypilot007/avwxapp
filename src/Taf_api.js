@@ -38,6 +38,7 @@ function Taf_api(input_Taf) {
                  const new_taf_data = await taf_response.text(taf_response);
             
                 setMetarData(data)
+
                 setTaf_id(new_taf_data)
                 
             
@@ -53,7 +54,6 @@ function Taf_api(input_Taf) {
     
         fetchTaf(input_Taf)
             
-        console.log(metarData)
 
 
 
