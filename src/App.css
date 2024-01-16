@@ -253,10 +253,11 @@ table{
 .input_Taf{
 
   height: 20px;
-  font-size: larger;
   font-weight: bolder;
   margin-bottom: 15px;
   font-weight: bold;
+  font-size: clamp(8px, 3vw + 5px, 50px);
+  text-overflow: none;
   
 }
 .input_Taf input{

@@ -69,6 +69,30 @@ function ident(code){
                 if(break_ident[i] === 'BR')
                 {
                     final_descp = final_descp +" Mist" + space
+                }else
+                if(break_ident[i] === '-FZRA')
+                {
+                    final_descp = final_descp +" Light Freezing Rain" + space
+                }else
+                if(break_ident[i] === 'FZRA')
+                {
+                    final_descp = final_descp +" Moderate Freezing Rain" + space
+                }else
+                if(break_ident[i] === '+FZRA')
+                {
+                    final_descp = final_descp +" Heavy Freezing Rain" + space
+                }else
+                if(break_ident[i] === 'DZ')
+                {
+                    final_descp = final_descp +" Moderate Drizzle" + space
+                }else
+                if(break_ident[i] === '-DZ')
+                {
+                    final_descp = final_descp +" Light Drizzle" + space
+                }else
+                if(break_ident[i] === '+DZ')
+                {
+                    final_descp = final_descp +" Heavy Drizzle" + space
                 }
                 else final_descp = null
                
