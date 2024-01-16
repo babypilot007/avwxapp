@@ -46,14 +46,14 @@ function Taf_api(input_Taf) {
 
          }
 
-        } else return null
+        } else input_Taf="kteb"
     }
 
         
     
         fetchTaf(input_Taf)
             
-        
+        console.log(metarData)
 
 
 

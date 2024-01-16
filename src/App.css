@@ -251,18 +251,18 @@ table{
 
 
 .input_Taf{
-
-  height: 20px;
+  margin-top: 20px;
   font-weight: bolder;
-  margin-bottom: 15px;
-  font-weight: bold;
-  font-size: clamp(8px, 3vw + 5px, 50px);
-  text-overflow: none;
-  
+  font-size: clamp(.5rem, 1vw + 0.75rem, 1.5rem);
+text-wrap: none;  
 }
-.input_Taf input{
 
- background-color: red;
+.input{
+  margin: 10px;
+  font-weight: bolder;
+  height: 20px;
+  
+
 }
 
 

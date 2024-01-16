@@ -24,7 +24,13 @@ function App() {
   const [showWinds, setShowWinds] = useState(false)
   const [showTerms, setShowTerms] = useState(false)
 
+    var display_taf = Taf_screen()
 
+      console.log(display_taf)
+
+          if(!display_taf){
+                display_taf = "Enter Correctly"
+          }
 
 
     const fetchData = async () => {
@@ -171,9 +177,9 @@ useEffect(() => {
                 {
 
                         
-                      <div><div className='taf'>{Taf_screen()}</div>
+                      <div><div className='taf'>{}</div>
                       
-                       <div>{showTaf ? <div className='taf'>{}</div> : null}</div>
+                       <div>{showTaf ? <div className='taf'>{display_taf}</div> : null}</div>
                       
                       </div>
 
