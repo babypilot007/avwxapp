@@ -49,6 +49,7 @@ function App() {
         var winds_data = await windsAloft.text(windsAloft);
         
         setWeatherData(data);
+
         // setwindsData(winds_data)
 
         
@@ -139,7 +140,6 @@ useEffect(() => {
                         </div> : null}
                       
                      </div>
-                              
                 {weatherData && weatherData.map((station)=>{
 
                   return (
@@ -147,8 +147,13 @@ useEffect(() => {
                     <div >
 
                         {showMetar ? <p className='airPort_1'>
+
+                          {/* {console.log(} */}
+
                                   
-                                   <p className='airPort_header'>{station.icaoId} <span>{fltDecision(visib(station.visib).props.children[1].props.className,clouds(station.clouds[0].base).props.children[1].props.className )}</span></p>
+                                  
+
+                                   <p className='airPort_header'>{station.icaoId} <span >{visib(station.visib) ?<span className='airport_conditions'> { fltDecision(visib(station.visib).props.children[1].props.className,clouds(station.clouds[0].base).props.children[1].props.className )}</span> : null }</span></p>
 
                                     <p>{coverType(station.clouds[0].cover)}</p>
                                     <p>{clouds(station.clouds[0].base)}</p> 

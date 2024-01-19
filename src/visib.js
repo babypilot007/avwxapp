@@ -3,7 +3,11 @@ import React from "react"
  function visib(vis){
 
 
-let intVis = parseInt(vis)
+    let intVis = vis
+
+if(vis === null){
+ intVis = 1
+} else intVis = parseInt(vis)
 
 if(intVis <= 10 && intVis >= 5 )
 {   
