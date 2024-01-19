@@ -113,7 +113,11 @@
       padding: 10px;
       background-color: rgb(52, 43, 43);
       inset: 5px;
-      
+
+      span{
+    
+
+      }
   }
 
   .airPort_1{
@@ -162,17 +166,48 @@
 
   .IFR {
     color: red;
+    
+  }
+
+  .IFR_header{
+    background-color: #e50000;
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
   }
 
   .VFR {
     color: rgb(42, 197, 31);
   }
+
+  .VFR_header{
+    background-color: #7ddd3e;
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+  }
+
   .MVFR {
     color: rgb(209, 177, 91);
   }
+
+  .MVFR_header{
+    background-color: rgb(209, 177, 91);
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+  }
+
   .LIFR {
 
     color :rgb(225, 31, 189)
+}
+
+.LIFR_header{
+  background-color: rgb(225, 31, 189);
+  padding: 5px;
+  border-radius: 10px;
+  margin-left: 5px;
 }
 
 .prectype{
